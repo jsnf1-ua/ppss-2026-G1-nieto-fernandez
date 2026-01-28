@@ -1,0 +1,13 @@
+	mvn compile
+--- resources:3.3.1:resources (default-resources) @ P00-maven1 ---
+--- compiler:3.13.0:compile (default-compile) @ P00-maven1 ---
+
+	mvn clean
+--- clean:3.2.0:clean (default-clean) @ P00-maven1 ---
+
+	mvn test
+--- resources:3.3.1:resources (default-resources) @ P00-maven1 ---
+--- compiler:3.13.0:compile (default-compile) @ P00-maven1 ---
+--- resources:3.3.1:testResources (default-testResources) @ P00-maven1 ---
+--- compiler:3.13.0:testCompile (default-testCompile) @ P00-maven1 ---
+--- surefire:3.5.2:test (default-test) @ P00-maven1 ---
