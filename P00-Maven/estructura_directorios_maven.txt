@@ -1,0 +1,29 @@
+.
+|____src	//Directorio de fuentes: contiene todos los ficheros necesarios para construir el proyecto
+| |____test
+| | |____java	//Contiene el código fuente de las pruebas del proyecto
+| | | |____paquete1	//Paquete donde están las pruebas del proyecto
+| | | | |____TrianguloTest.java
+| | | | |____MatriculaTest.java
+| |____main
+| | |____resources	//Ficheros adicionales usados por el código fuente
+| | |____java	//Contiene el código fuente del proyecto
+| | | |____paquete1 //Paquete donde están las clases del proyecto
+| | | | |____Triangulo.java
+| | | | |____Matricula.java
+|____pom.xml	//Project Object Model
+
+.
+|____src
+| |____test
+| | |____java
+| | | |____paquete2
+| | | | |____TrianguloTest.java
+| | | | |____MatriculaTest.java
+| |____main
+| | |____resources
+| | |____java
+| | | |____paquete2
+| | | | |____Triangulo.java
+| | | | |____Matricula.java
+|____pom.xml
