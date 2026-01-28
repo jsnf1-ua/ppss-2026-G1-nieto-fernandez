@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 
 @DisplayName("Tests para la clase Matricula")
 public class MatriculaTest {
-    Matricula mat;
+    Matricula mat
 
     @BeforeEach
     public void setup() {
