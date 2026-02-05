@@ -1,0 +1,48 @@
+Dados los siguientes ficheros de un proyecto Maven creado en $HOME (1,5p):
+‣ ExamenPPSS-1.0-SNAPSHOT.jar
+‣ Parcial1.java
+‣ Parcial1Test.java
+‣ Parcial1.class
+‣ Parcial1Test.class
+‣ ppss.Parcial1Test.txt
+‣ TEST-ppss.Parcial1Test.xml
+‣ pom.xml
+a) El artifactId del proyecto es: ExamenPPSS.
+b) Indica la ruta relativa desde $HOME de cada uno de los ficheros, representando gráficamente la estructura jerárquica de directorios:
+
+$HOME/
+└── ExamenPPSS/
+|	└── pom.xml
+|	└── src/
+|	|	└──main/
+|	|		└──java/
+|	|			└──ppss/
+|	|				└── Parcial1.java
+|	└── test/
+|		└──java/
+|			└──ppss/
+|				└── Parcial1oTest.java
+└── target/
+	└── classes/
+	|	└──ppss/
+	|		└── Parcial1.class
+	└── test-classes/
+	|	└──ppss/
+	|		└── Parcial1Test.class
+	└── surefire-reports/
+	|	└──ppss.Parcial1Test.txt
+	|	└── TEST-ppss.Parcial1Test.xml
+	└── ExamenPPSS-1.0-SNAPSHOT.jar
+
+c) En este proyecto, cualquier comando maven se tiene que ejecutar desde la carpeta: Donde está el pom.
+
+d) Indica los nombres de ficheros que se crean, si es que se crea alguno, después de ejecutar cada uno de los siguientes comandos secuencialmente y teniendo en cuenta las suposiciones que se mencionan:
+
+d.1) Suponemos que Parcial1Test.java contiene errores de compilación y ejecutamos el comando “mvn clean test”: Parcial1.class.
+
+d.2) Suponemos que corregimos los errores de compilación de Parcial1Test.java y ejecutamos el mismo
+comando: Parcial1.class, Parcial1Test.class, ppss.Parcial1Test.txt, TEST-ppss.Parcial1Test.xml.
+
+d.3) Ejecutamos el comando “mvn package”: ExamenPPSS-1.0-SNAPSHOT.jar
+
+d.4) Ejecutamos el comando “mvn install”: comia el jar en local. 
