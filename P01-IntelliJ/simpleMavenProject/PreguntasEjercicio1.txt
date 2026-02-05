@@ -1,0 +1,24 @@
+ ***Fases PACKAGE e INSTALL***
+๏ qué goals se ejecutan en cada caso:
+- PACKAGE:
+	resources:3.3.1:resources
+	compiler:3.13.0:compile
+	resources:3.3.1:testResources
+	compiler:3.13.0:testCompile
+	surefire:3.5.2:test
+- INSTALL:
+	resources:3.3.1:resources
+	compiler:3.13.0:compile
+	resources:3.3.1:testResources
+	compiler:3.13.0:testCompile
+	surefire:3.5.2:test
+	
+
+๏ qué hace, qué artefacto genera y dónde se genera durante la fase package:
+	Empaqueta los class compilados en un artefcato maven, en este caso: simpleMavenProject-1.0-SNAPSHOT.jar.
+		
+๏ qué hace exactamente la fase install y dónde se copia exactamente en tu disco duro el artefacto correspondiente.
+	Copia el artefacto de la fase package
+
+๏ ¿Para qué nos puede servir que el empaquetado de nuestro proyecto esté almacenado en nuestro repositorio local Maven?
+	Para que otros proyectos maven puedan usar el proyecto como dependencia o para reutilizar código.
