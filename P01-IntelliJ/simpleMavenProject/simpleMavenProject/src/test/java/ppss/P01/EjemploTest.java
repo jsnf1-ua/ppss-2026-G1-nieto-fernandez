@@ -24,4 +24,40 @@ class EjemploTest {
         assertEquals(resultadoEsperado, resultadoReal);
     }
 
+    @Test
+    void C1_fechaValida_should_be_false_when_date_is_1_1_2020_julia() {
+        //Preparamos los datos (Arrange)
+        int dia = 29;
+        int mes = 2;
+        int anyo = 2026;
+        boolean resultadoEsperado = false;
+        //Ejecutamos (Act)
+        boolean resultadoReal = ejemplo.fechaValida(dia,mes,anyo);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+
+    @Test
+    void C2_fechaValida_should_be_true_when_dia_31_and_mes_8() {
+        //Preparamos los datos (Arrange)
+        int dia = 31;
+        int mes = 8;
+        int anyo = 2019;
+        boolean resultadoEsperado = true;
+        //Ejecutamos (Act)
+        boolean resultadoReal = ejemplo.fechaValida(dia,mes,anyo);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+
+    @Test
+    void C3_fechaValida_should_be_false_when_dia_is_negative() {
+        //Preparamos los datos (Arrange)
+        int dia = -2;
+        int mes = 5;
+        int anyo = 2019;
+        boolean resultadoEsperado = false;
+        //Ejecutamos (Act)
+        boolean resultadoReal = ejemplo.fechaValida(dia,mes,anyo);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+
 }

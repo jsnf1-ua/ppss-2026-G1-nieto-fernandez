@@ -1,0 +1,14 @@
+EJERCICIO 2:
+
+- Comportamientos que pertenecen al conjunto S (comportamientos de la especificación):
+	(1) ((29,2,2020), true) // divisible entre 4 y no entre 100.
+	(2) ((29,2,2026), false) //No divisible ni entre 100, 400, 4.
+	(3) ((29,2,1900), false) //No divisible entre 400 pero si entre 100.
+
+- Comportamientos que pertenecen al conjunto P (comportamientos del código):	
+        (1) ((29,2,2020), true) -> Test sale bien.
+	(2) ((1,1,2026), false) -> Test sale bien.
+
+- Comportamientos que pertenecen a T (comportamientos probados):
+   (1) ((29,2,2020), true)
+   (2) ((1,1,2026), false) 
