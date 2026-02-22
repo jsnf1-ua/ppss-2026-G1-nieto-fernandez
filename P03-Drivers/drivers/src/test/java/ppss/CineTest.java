@@ -1,9 +1,9 @@
 package ppss;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Assertions;
 
-
+@DisplayName("Tests asociados a la clase Cine")
 class CineTest {
 
     @Test
