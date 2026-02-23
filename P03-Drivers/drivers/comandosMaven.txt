@@ -1,0 +1,15 @@
+RUN CONFIGURATIONS:
+
+
+- Run_CineTest: 
+	clean test -Dtest=CineTest
+
+- Run_FicheroTextoTest_sin_excluidos: 
+	clean test -Dtest=FicheroTextoTest
+
+- Run_parametrizados: 
+	clean test -Dgroups=parametrizado
+
+- Run_no_parametrizados_o_tablaB: 
+	test -Dgroups="no_parametrizado | tablaB
+
