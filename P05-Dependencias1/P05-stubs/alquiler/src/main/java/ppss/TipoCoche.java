@@ -1,4 +1,5 @@
 package ppss;
 
-public class TipoCoche {
+public enum TipoCoche {
+    TURISMO,DEPORTIVO,CARAVANA;
 }

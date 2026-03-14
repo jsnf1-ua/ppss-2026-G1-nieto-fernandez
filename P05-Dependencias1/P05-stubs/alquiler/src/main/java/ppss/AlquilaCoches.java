@@ -4,6 +4,10 @@ import java.time.LocalDate;
 public class AlquilaCoches {
     protected Calendario calendario = new Calendario();
 
+    protected IService getIservice() {
+        return new Servicio(); //para el testable.
+    }
+
     public Ticket calculaPrecio(TipoCoche tipo, LocalDate inicio, int ndias)
             throws MensajeException {
         Ticket ticket = new Ticket();
@@ -11,12 +15,12 @@ public class AlquilaCoches {
         float porcentaje = 0.25f;
 
         String observaciones = "";
-        IService servicio = new Servicio();
-        precioDia = servicio.consultaPrecio(tipo);
+        IService servicio = getIservice();
+        precioDia = servicio.consultaPrecio(tipo); //DEPENDECIA
         for (int i=0; i<ndias;i++) {
             LocalDate otroDia = inicio.plusDays((long)i);
             try {
-                if (calendario.es_festivo(otroDia)) {
+                if (calendario.es_festivo(otroDia)) { //DEPENDENCIA
                     precioTotal += (1+ porcentaje)*precioDia;
                 } else {
                     precioTotal += (1- porcentaje)*precioDia;
