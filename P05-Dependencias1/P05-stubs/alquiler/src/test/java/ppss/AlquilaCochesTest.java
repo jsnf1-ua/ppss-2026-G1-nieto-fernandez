@@ -30,14 +30,6 @@ public class AlquilaCochesTest {
         Assertions.assertEquals(75.0f, resReal.getPrecio_final());
     }
 
-    /*public void C1() {
-        CalendarioStub stubc = new CalendarioStub();
-        ArrayList<LocalDate> trues = new ArrayList<>(Arrays.asList(
-                LocalDate.of()
-        ));
-        stubc.addFestivo(trues);
-        ServicioStub stubs = new ServicioStub();
-    }*/
     @Test
     public void C2_returns_ticket62and5_when_TURISMO20240619and7() throws MensajeException {
         ServicioStub stubs2 = new ServicioStub();
@@ -59,5 +51,34 @@ public class AlquilaCochesTest {
         );
 
         Assertions.assertEquals(62.5f, resReal.getPrecio_final());
+    }
+
+    @Test
+    public void C3_returns_3err_when_1821and22() throws MensajeException {
+        AlquilaCochesTestable sut3 = new AlquilaCochesTestable();
+
+        CalendarioStub stubc3 = new CalendarioStub();
+        ArrayList<LocalDate> errs = new ArrayList<>(Arrays.asList(
+                LocalDate.of(2024,04,18),
+                LocalDate.of( 2024,04,21),
+                LocalDate.of( 2024,04,22)
+        ));
+        stubc3.addErrs(errs);
+        sut3.calendario = stubc3;
+
+        ServicioStub stubs3 = new ServicioStub();
+        sut3.setServicio(stubs3);
+
+        MensajeException resReal3 = Assertions.assertThrows(MensajeException.class, () -> {
+            sut3.calculaPrecio (
+                            TipoCoche.TURISMO,
+                            LocalDate.of(2024,04,17),
+                            8
+            );
+        });
+
+        String resEsperado3 = "Error en dia: 2024-04-18; Error en dia: 2024-04-21; Error en dia: 2024-04-22; ";
+
+        Assertions.assertEquals(resEsperado3, resReal3.getMessage());
     }
 }

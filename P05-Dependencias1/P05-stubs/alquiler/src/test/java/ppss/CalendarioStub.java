@@ -11,8 +11,8 @@ public class CalendarioStub extends Calendario {
         trues.addAll(fechas);
     }
 
-    public void addErrs (ArrayList<LocalDate> fechas) {
-        trues.addAll(errs);
+    public void addErrs (ArrayList<LocalDate> er) {
+        errs.addAll(er);
     }
 
     @Override
