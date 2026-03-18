@@ -70,15 +70,15 @@ public class PremioTest {
 
         EasyMock.expect(mockPremioPrarc3.generaNumero()).andReturn(0.48f);
 
-        Assertions.assertDoesNotThrow(() ->
-                EasyMock.expect(mockCli3.obtenerPremio()).andReturn("nada"));
+        //Assertions.assertDoesNotThrow(() -> //ESTO NO Q NO SE LLAMA!
+        //        EasyMock.expect(mockCli3.obtenerPremio()).andReturn("nada"));
 
         ctrl3.replay();
 
         mockPremioPrarc3.cliente = mockCli3;
 
         //Act
-        String resReal3 = mockCli3.obtenerPremio();
+        String resReal3 = mockPremioPrarc3.compruebaPremio();
 
         //assert
         Assertions.assertEquals(resEsperado3, resReal3);
