@@ -69,4 +69,25 @@ public class ReservaStubTest {
 
         ctrl.verify();
     }
+    @Test
+    public void C3() {
+        //Arrange
+        String [] isbns = {"22222"};
+        String login = "ppss";
+        String pass = "ppss";
+        String soc = "Luis";
+        String resEsperado = "ERROR de permisos";
+        IMocksControl ctrl = EasyMock.createNiceControl();
+        Reserva mockResParcial = EasyMock.partialMockBuilder(Reserva.class).addMockedMethod("compruebaPermisos").addMockedMethod("getOperacionBO").mock(ctrl);
+        IOperacionBO mocOp = ctrl.mock(IOperacionBO.class);
+
+        EasyMock.expect(mockResParcial.compruebaPermisos(login, pass, Usuario.BIBLIOTECARIO)).andStubReturn(false);
+
+        ctrl.replay();
+
+        //Act
+        Assertions.assertThrows(ReservaException.class, ()->
+                mockResParcial.realizaReserva(login, pass, soc, isbns));
+
+    }
 }
