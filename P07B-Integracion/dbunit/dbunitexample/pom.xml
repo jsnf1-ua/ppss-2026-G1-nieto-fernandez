@@ -79,7 +79,8 @@
                 </dependencies>
                 <configuration>
                     <driver>com.mysql.cj.jdbc.Driver</driver>
-                    <url>jdbc:mysql://localhost:3306/?useSSL=false&amp;allowPublicKeyRetrieval=true</url>                    <username>ppss_user</username>
+                    <url>jdbc:mysql://localhost:3306/?useSSL=false&amp;allowPublicKeyRetrieval=true</url>
+                    <username>ppss_user</username>
                     <password>ppss-2025</password>
                 </configuration>
                 <executions>
