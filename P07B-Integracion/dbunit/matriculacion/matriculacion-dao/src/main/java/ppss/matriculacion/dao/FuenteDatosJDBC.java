@@ -25,7 +25,7 @@ public class FuenteDatosJDBC {
 	}
 	
 	public Connection getConnection() throws SQLException {
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/matriculacion?useSSL=false&allowPublicKeyRetrieval=true", "ppss_user", "ppss-2025");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/matriculacion?useSSL=false", "ppss_user", "ppss-2025");
 
 	}
 }

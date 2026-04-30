@@ -18,8 +18,13 @@ import ppss.matriculacion.to.AlumnoTO;
 public class JDBCAlumnoDAO implements IAlumnoDAO {
 
 	public void addAlumno(AlumnoTO a) throws DAOException {
+		if(a == null) {
+			throw new DAOException("Alumno nulo");
+		}
+
 		Connection con = null;
 		PreparedStatement ps = null;
+
 		try {
 			con = FuenteDatosJDBC.getInstance().getConnection();
 			ps = con.prepareStatement("INSERT INTO alumnos(nif, nombre, direccion, email, fechaNac) VALUES (?,?,?,?,?)");
