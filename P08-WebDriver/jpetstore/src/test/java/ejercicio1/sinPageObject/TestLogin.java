@@ -1,4 +1,4 @@
-package Ejercicio1.sinPageObject;
+package ejercicio1.sinPageObject;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;

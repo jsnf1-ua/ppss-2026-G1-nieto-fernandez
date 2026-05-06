@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Ejercicio1.sinPO.TestLogin" type="MavenRunConfiguration" factoryName="Maven">
+  <configuration default="false" name="ejercicio2.TestLogin2" type="MavenRunConfiguration" factoryName="Maven">
     <MavenSettings>
       <option name="myGeneralSettings" />
       <option name="myRunnerSettings" />
@@ -12,7 +12,7 @@
           <option name="goals">
             <list>
               <option value="test" />
-              <option value="-Dtest=Ejercicio1.sinPageObject.TestLogin" />
+              <option value="-Dtest=ejercicio2.conPO.TestLogin2" />
             </list>
           </option>
           <option name="multimoduleDir" />
