@@ -1,0 +1,64 @@
+./jmeter -n -t /home/juliawsl/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P0
+9-JMeter/Plan-Ejercicio2.jmx -l /home/juliawsl/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P09-JMeter/data.csv -f
+
+./jmeter -g /home/juliawsl/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P09-JMeter/data.csv -o /home/juliawsl/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P09-JMeter/reports/ -f
+---------------------------------------
+-JMeter los Listeners actúan sobre el nivel en el que están y sus descendientes.
+-En JMeter existe una regla de alcance (scope): un listener "oye" a sus hermanos y a sus hijos, pero no a sus "padres" o "tíos" que estén por encima de su jerarquía.
+-¿Qué NO escucharía?
+	Si tuvieras otro Thread Group 2 fuera de ese, el listener que tienes seleccionado no vería nada de lo que pase en el segundo grupo.
+-----------------------------------------
+INTERLEAVE
+El controlador Interleave funciona como un "repartidor de cartas": en lugar de ejecutar a todos sus hijos de golpe, solo ejecuta uno por cada iteración (vuelta) del grupo de hilos.
+
+Estructura:**********
+Thread Group
+	...
+	Login
+	Interleave Controller (La carpeta lógica)
+		Reptiles (dentro)
+		Dogs (dentro)
+		Birds (dentro)
+	Sign Out
+**********************
+
+*****Ejemplo de Interleave*****
+Home -> Catalog -> Sign In -> Login
+Reptiles (Primera pasada por el Interleave)
+Sign Out
+Home -> Catalog -> Sign In -> Login
+Dogs (Segunda pasada: el controlador "pasa de turno")
+Sign Out
+Home -> Catalog -> Sign In -> Login
+Birds (Tercera pasada)
+Sign Out
+
+-------------------------------------------
+TIMERS
+Constant Delay Offset (1500ms): Es el tiempo mínimo que el usuario siempre va a esperar (1.5 segundos).
+
+Random Delay Maximum (100ms): Es un margen de "caos" para que no todos los usuarios esperen exactamente lo mismo. El retraso real será entre 1500ms y 1600ms.
+
+El Timer en el Thread Group (Padre): Al ponerlo en la raíz del grupo, afecta a TODOS los samplers. Antes de ejecutar cada petición, JMeter esperará ~1.5s.
+
+El Timer dentro de Login (Hijo): JMeter suma los efectos. Para el Login, se aplicará el timer general MÁS el timer específico de 2s. El usuario "tardará" más en loguearse porque tiene que escribir sus credenciales.
+
+El tiempo de ejecución de la muestra (Sample Time)
+Este tiempo no cambia. Es el tiempo que transcurre desde que JMeter envía la petición hasta que recibe la respuesta del servidor. Depende de la velocidad del serv.
+
+El tiempo total de ejecución (Total Elapsed Time)
+Aquí es donde entran los Timers. Imagina que tienes 2 peticiones:
+Sin Timers: Petición 1 (20ms) + Petición 2 (20ms) = 40ms de tiempo total.
+Con Timers (1500ms): Pausa (1500ms) + Petición 1 (20ms) + Pausa (1500ms) + Petición 2 (20ms) = 3040ms de tiempo total.
+Como ves, la prueba ahora dura mucho más tiempo porque incluye los "tiempos de descanso" del usuario.
+
+El Throughput (o rendimiento) mide cuántas peticiones es capaz de procesar el sistema por unidad de tiempo (peticiones por segundo o por minuto).
+Mira la diferencia con un ejemplo extremo:
+Imagina que haces 60 peticiones.
+Caso A (Sin pausas): Las haces todas en 1 segundo. Tu Throughput es de 60 peticiones/segundo.
+Caso B (Con pausas de 1s): Como esperas un segundo entre cada una, tardas 60 segundos en total. Tu Throughput es de 1 petición/segundo.
+El Throughput baja porque, al introducir esperas, estás enviando trabajo al servidor de forma más lenta. El servidor sigue siendo igual de rápido (Sample Time constante), pero tú le estás dando menos "caña".
+
+**************************
+* + Timer = - Throughput *
+**************************
