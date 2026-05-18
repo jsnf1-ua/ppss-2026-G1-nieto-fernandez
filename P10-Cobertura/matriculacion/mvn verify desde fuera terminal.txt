@@ -1,0 +1,246 @@
+juliawsl@JuliaNiett:~/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P07B-Integracion/dbunit/matriculacion$ mvn verify
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] matriculacion                                                      [pom]
+[INFO] matriculacion-comun                                                [jar]
+[INFO] matriculacion-dao                                                  [jar]
+[INFO] matriculacion-proxy                                                [jar]
+[INFO] matriculacion-bo                                                   [jar]
+[INFO] 
+[INFO] -------------------------< ppss:matriculacion >-------------------------
+[INFO] Building matriculacion 1.0-SNAPSHOT                                [1/5]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- failsafe:3.2.5:integration-test (default) @ matriculacion ---                                                              
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- failsafe:3.2.5:verify (default) @ matriculacion ---
+[INFO] 
+[INFO] ----------------------< ppss:matriculacion-comun >----------------------
+[INFO] Building matriculacion-comun 1.0-SNAPSHOT                          [2/5]
+[INFO]   from matriculacion-comun/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ matriculacion-comun ---                                                    
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ matriculacion-comun ---                                                        
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 5 source files with javac [debug target 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ matriculacion-comun ---                                            
+[INFO] skip non existing resourceDirectory /home/juliawsl/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P07B-Integracion/dbunit/matriculacion/matriculacion-comun/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ matriculacion-comun ---                                                
+[INFO] Recompiling the module because of changed dependency.
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ matriculacion-comun ---
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ matriculacion-comun ---
+[INFO] Building jar: /home/juliawsl/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P07B-Integracion/dbunit/matriculacion/matriculacion-comun/target/matriculacion-comun-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- failsafe:3.2.5:integration-test (default) @ matriculacion-comun ---                                                        
+[INFO] 
+[INFO] --- failsafe:3.2.5:verify (default) @ matriculacion-comun ---
+[INFO] 
+[INFO] -----------------------< ppss:matriculacion-dao >-----------------------
+[INFO] Building matriculacion-dao 1.0-SNAPSHOT                            [3/5]
+[INFO]   from matriculacion-dao/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ matriculacion-dao ---                                                      
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ matriculacion-dao ---                                                          
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 9 source files with javac [debug target 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ matriculacion-dao ---                                              
+[INFO] Copying 6 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ matriculacion-dao ---                                                  
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 3 source files with javac [debug target 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ matriculacion-dao ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running ppss.matriculacion.dao.AlumnoDAOTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.136 s -- in ppss.matriculacion.dao.AlumnoDAOTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ matriculacion-dao ---
+[INFO] Building jar: /home/juliawsl/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P07B-Integracion/dbunit/matriculacion/matriculacion-dao/target/matriculacion-dao-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- sql:1.5:execute (create_bdd_matriculacion.sql) @ matriculacion-dao ---                                                     
+[INFO] Executing file: /tmp/create_bdd_matriculacion.1323319715sql
+[INFO] 5 of 5 SQL statements executed successfully
+[INFO] 
+[INFO] --- failsafe:3.2.5:integration-test (default) @ matriculacion-dao ---                                                          
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running ppss.matriculacion.dao.AlumnoDAOIT
+[main] WARN org.dbunit.dataset.AbstractTableMetaData - Potential problem found: The configured data type factory 'class org.dbunit.dataset.datatype.DefaultDataTypeFactory' might cause problems with the current database 'MySQL' (e.g. some datatypes may not be supported properly). In rare cases you might see this message because the list of supported database products is incomplete (list=[derby]). If so please request a java-class update via the forums.If you are using your own IDataTypeFactory extending DefaultDataTypeFactory, ensure that you override getValidDbProducts() to specify the supported database products.
+[main] WARN org.dbunit.dataset.AbstractTableMetaData - Potential problem found: The configured data type factory 'class org.dbunit.dataset.datatype.DefaultDataTypeFactory' might cause problems with the current database 'MySQL' (e.g. some datatypes may not be supported properly). In rare cases you might see this message because the list of supported database products is incomplete (list=[derby]). If so please request a java-class update via the forums.If you are using your own IDataTypeFactory extending DefaultDataTypeFactory, ensure that you override getValidDbProducts() to specify the supported database products.
+[main] WARN org.dbunit.dataset.AbstractTableMetaData - Potential problem found: The configured data type factory 'class org.dbunit.dataset.datatype.DefaultDataTypeFactory' might cause problems with the current database 'MySQL' (e.g. some datatypes may not be supported properly). In rare cases you might see this message because the list of supported database products is incomplete (list=[derby]). If so please request a java-class update via the forums.If you are using your own IDataTypeFactory extending DefaultDataTypeFactory, ensure that you override getValidDbProducts() to specify the supported database products.
+[main] WARN org.dbunit.dataset.AbstractTableMetaData - Potential problem found: The configured data type factory 'class org.dbunit.dataset.datatype.DefaultDataTypeFactory' might cause problems with the current database 'MySQL' (e.g. some datatypes may not be supported properly). In rare cases you might see this message because the list of supported database products is incomplete (list=[derby]). If so please request a java-class update via the forums.If you are using your own IDataTypeFactory extending DefaultDataTypeFactory, ensure that you override getValidDbProducts() to specify the supported database products.
+[main] WARN org.dbunit.dataset.AbstractTableMetaData - Potential problem found: The configured data type factory 'class org.dbunit.dataset.datatype.DefaultDataTypeFactory' might cause problems with the current database 'MySQL' (e.g. some datatypes may not be supported properly). In rare cases you might see this message because the list of supported database products is incomplete (list=[derby]). If so please request a java-class update via the forums.If you are using your own IDataTypeFactory extending DefaultDataTypeFactory, ensure that you override getValidDbProducts() to specify the supported database products.
+[main] WARN org.dbunit.dataset.AbstractTableMetaData - Potential problem found: The configured data type factory 'class org.dbunit.dataset.datatype.DefaultDataTypeFactory' might cause problems with the current database 'MySQL' (e.g. some datatypes may not be supported properly). In rare cases you might see this message because the list of supported database products is incomplete (list=[derby]). If so please request a java-class update via the forums.If you are using your own IDataTypeFactory extending DefaultDataTypeFactory, ensure that you override getValidDbProducts() to specify the supported database products.
+[main] WARN org.dbunit.dataset.AbstractTableMetaData - Potential problem found: The configured data type factory 'class org.dbunit.dataset.datatype.DefaultDataTypeFactory' might cause problems with the current database 'MySQL' (e.g. some datatypes may not be supported properly). In rare cases you might see this message because the list of supported database products is incomplete (list=[derby]). If so please request a java-class update via the forums.If you are using your own IDataTypeFactory extending DefaultDataTypeFactory, ensure that you override getValidDbProducts() to specify the supported database products.
+[main] WARN org.dbunit.dataset.AbstractTableMetaData - Potential problem found: The configured data type factory 'class org.dbunit.dataset.datatype.DefaultDataTypeFactory' might cause problems with the current database 'MySQL' (e.g. some datatypes may not be supported properly). In rare cases you might see this message because the list of supported database products is incomplete (list=[derby]). If so please request a java-class update via the forums.If you are using your own IDataTypeFactory extending DefaultDataTypeFactory, ensure that you override getValidDbProducts() to specify the supported database products.
+[main] WARN org.dbunit.dataset.AbstractTableMetaData - Potential problem found: The configured data type factory 'class org.dbunit.dataset.datatype.DefaultDataTypeFactory' might cause problems with the current database 'MySQL' (e.g. some datatypes may not be supported properly). In rare cases you might see this message because the list of supported database products is incomplete (list=[derby]). If so please request a java-class update via the forums.If you are using your own IDataTypeFactory extending DefaultDataTypeFactory, ensure that you override getValidDbProducts() to specify the supported database products.
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.190 s -- in ppss.matriculacion.dao.AlumnoDAOIT
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- failsafe:3.2.5:verify (default) @ matriculacion-dao ---
+[INFO] 
+[INFO] ----------------------< ppss:matriculacion-proxy >----------------------
+[INFO] Building matriculacion-proxy 1.0-SNAPSHOT                          [4/5]
+[INFO]   from matriculacion-proxy/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ matriculacion-proxy ---                                                    
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ matriculacion-proxy ---                                                        
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 2 source files with javac [debug target 21] to target/classes
+[INFO] /home/juliawsl/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P07B-Integracion/dbunit/matriculacion/matriculacion-proxy/src/main/java/ppss/matriculacion/proxy/ProxyDatosEconomicos.java: /home/juliawsl/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P07B-Integracion/dbunit/matriculacion/matriculacion-proxy/src/main/java/ppss/matriculacion/proxy/ProxyDatosEconomicos.java uses or overrides a deprecated API.
+[INFO] /home/juliawsl/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P07B-Integracion/dbunit/matriculacion/matriculacion-proxy/src/main/java/ppss/matriculacion/proxy/ProxyDatosEconomicos.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ matriculacion-proxy ---                                            
+[INFO] skip non existing resourceDirectory /home/juliawsl/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P07B-Integracion/dbunit/matriculacion/matriculacion-proxy/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ matriculacion-proxy ---                                                
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 2 source files with javac [debug target 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ matriculacion-proxy ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running ppss.matriculacion.proxy.ApartadoITest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.141 s -- in ppss.matriculacion.proxy.ApartadoITest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ matriculacion-proxy ---
+[INFO] Building jar: /home/juliawsl/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P07B-Integracion/dbunit/matriculacion/matriculacion-proxy/target/matriculacion-proxy-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- failsafe:3.2.5:integration-test (default) @ matriculacion-proxy ---                                                        
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running ppss.matriculacion.proxy.ApartadoIIT
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.131 s -- in ppss.matriculacion.proxy.ApartadoIIT
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- failsafe:3.2.5:verify (default) @ matriculacion-proxy ---
+[INFO] 
+[INFO] -----------------------< ppss:matriculacion-bo >------------------------
+[INFO] Building matriculacion-bo 1.0-SNAPSHOT                             [5/5]
+[INFO]   from matriculacion-bo/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ matriculacion-bo ---                                                       
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ matriculacion-bo ---                                                           
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 4 source files with javac [debug target 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ matriculacion-bo ---                                               
+[INFO] skip non existing resourceDirectory /home/juliawsl/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P07B-Integracion/dbunit/matriculacion/matriculacion-bo/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ matriculacion-bo ---                                                   
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 2 source files with javac [debug target 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ matriculacion-bo ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running ppss.matriculacion.bo.ApartadoITest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.140 s -- in ppss.matriculacion.bo.ApartadoITest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ matriculacion-bo ---
+[INFO] Building jar: /home/juliawsl/wsljulia/gitUA/3/2c/PPSS/ppss-2026-G1-nieto-fernandez/P07B-Integracion/dbunit/matriculacion/matriculacion-bo/target/matriculacion-bo-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- failsafe:3.2.5:integration-test (default) @ matriculacion-bo ---                                                           
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running ppss.matriculacion.bo.ApartadoIIT
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.148 s -- in ppss.matriculacion.bo.ApartadoIIT
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- failsafe:3.2.5:verify (default) @ matriculacion-bo ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for matriculacion 1.0-SNAPSHOT:
+[INFO] 
+[INFO] matriculacion ...................................... SUCCESS [  1.208 s]
+[INFO] matriculacion-comun ................................ SUCCESS [  3.094 s]
+[INFO] matriculacion-dao .................................. SUCCESS [  7.679 s]
+[INFO] matriculacion-proxy ................................ SUCCESS [  2.967 s]
+[INFO] matriculacion-bo ................................... SUCCESS [  2.981 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  18.249 s
+[INFO] Finished at: 2026-05-01T01:01:06+02:00
+[INFO] ------------------------------------------------------------------------
+
+
+******************************************notas***************************************************
+Reactor ha ordenado:
+
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] matriculacion                                                      [pom]
+[INFO] matriculacion-comun                                                [jar]
+[INFO] matriculacion-dao                                                  [jar]
+[INFO] matriculacion-proxy                                                [jar]
+[INFO] matriculacion-bo                                                   [jar]
+
+Dentro de cada modulo hace compile, test---compile, test surefire los unitarios *Test.java, package .jar, integration-test failsafe los test de integración *IT.java.
